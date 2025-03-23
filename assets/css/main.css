@@ -1750,9 +1750,111 @@ section,
   }
 }
 
+/*--------------------------------------------------------------*/
+/* Blogs Section Styling */
+/*--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.blogs .blog-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.blogs .blog-item {
+  background-color: var(--surface-color);
+  padding: 20px;
+  flex: 1;
+  min-width: 30%;
+  max-width: 30%;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 255, 0, 0.2);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  margin: 0 10px;
+}
+
+.blogs .blog-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px 5px var(--accent-color);
+}
+
+.blogs .blog-item h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.blogs .blog-item .author {
+  font-size: 14px;
+  color: var(--default-color);
+  margin-bottom: 10px;
+}
+
+.blogs .blog-content {
+  font-size: 16px;
+  color: var(--text-color);
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.blogs .blog-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--accent-color);
+  z-index: -1;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.blogs .blog-item:hover::before {
+  opacity: 1;
+}
+
+
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
+/*
 .faq .content h3 {
   font-weight: 400;
   font-size: 34px;
@@ -1837,7 +1939,7 @@ section,
 .faq .faq-container .faq-active .faq-toggle {
   transform: rotate(90deg);
   color: var(--accent-color);
-}
+} */
 
 /*--------------------------------------------------------------
 # Recent Posts Section
@@ -2240,13 +2342,124 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+/* .starter-section {
+} */
+
+/*--------------------------------------------------------------*/
+/* Blogs Section Styling */
+/*--------------------------------------------------------------*/
+.blogs .section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.blogs .section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.blogs .section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.blogs .section-title p {
+  margin-bottom: 0;
+}
+
+.blogs .blog-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blogs .blog-container::-webkit-scrollbar {
+  display: none;
+}
+
+.blogs .blog-item {
+  padding: 20px;
+  flex: 1;
+  min-width: 30%;
+  max-width: 30%;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0px 5px 15px rgba(0, 255, 0, 0.2);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  background: transparent;
+}
+
+.blogs .blog-item:hover {
+  transform: scale(1.07) translateY(-5px);
+  box-shadow: 0px 0px 20px 5px var(--accent-color);
+}
+
+.blogs .blog-item h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.blogs .blog-item .author {
+  font-size: 14px;
+  color: var(--default-color);
+  margin-bottom: 10px;
+}
+
+.blogs .blog-item .blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.blogs .blog-content {
+  font-size: 16px;
+  color: var(--text-color);
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.blogs .blog-content::-webkit-scrollbar {
+  display: none;
+}
+
+.blogs .blog-item::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .blogs .blog-item {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------
 # Blog Posts Section
 --------------------------------------------------------------*/
+/*
 .blog-posts article {
   background-color: var(--surface-color);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -2304,6 +2517,7 @@ section,
 /*--------------------------------------------------------------
 # Blog Pagination Section
 --------------------------------------------------------------*/
+/*
 .blog-pagination {
   padding-top: 0;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
@@ -2343,6 +2557,7 @@ section,
 /*--------------------------------------------------------------
 # Blog Details Section
 --------------------------------------------------------------*/
+/*
 .blog-details {
   padding-bottom: 30px;
 }
@@ -2496,6 +2711,7 @@ section,
 /*--------------------------------------------------------------
 # Blog Author Section
 --------------------------------------------------------------*/
+/*
 .blog-author {
   padding: 10px 0 40px 0;
 }
@@ -2537,6 +2753,7 @@ section,
 /*--------------------------------------------------------------
 # Blog Comments Section
 --------------------------------------------------------------*/
+/*
 .blog-comments {
   padding: 10px 0;
 }
@@ -2591,7 +2808,7 @@ section,
 
 .blog-comments .comment.comment-reply {
   padding-left: 40px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Comment Form Section
