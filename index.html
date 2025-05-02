@@ -58,989 +58,520 @@
 
 
 <body class="index-page">
-
-  <header id="header" class="header fixed-top">
-
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a
-              href="mailto:contact@example.com">pristinepads.co@gmail.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 92214 73819</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="https://x.com/pristinepads" class="twitter">
-            <i class="bi bi-twitter-x"></i>
-          </a>
-
-          <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
-          <a href="https://www.instagram.com/pristinepads.co/" class="instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
-        </div>
-      </div>
+  <header>
+    <a href="index.html">
+    <div class="logo-container">
+      <img src="assets/img/logo.png" alt="Pristine Pads Logo" >
+      <h1>Pristine Pads</h1>
     </div>
-    <!-- End Top Bar -->
-
-    <div class="branding d-flex align-items-center" style="margin-top: -10px;">
-
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-          <!-- Logo Image -->
-          <div class="image-container" style="max-width: 80px; margin-right: 10px;">
-            <img src="assets/img/logo.png" alt="Pristine Pads and Co."
-              style="max-width: 80px; max-height: 80px; object-fit: contain;">
-          </div>
-
-          <!-- Site Name -->
-          <h1 class="sitename" style="margin: 0; font-size: 1.8rem; color: #ffffff; white-space: nowrap;">
-            Pristine Pads & Co.
-          </h1>
-        </a>
-
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home<br></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-            <!-- <li><a href="#team">Team</a></li> -->
-            <li><a href="#blogs">Blogs</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-      </div>
-
-    </div>
-
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="navbar" class="nav-links">
+      <a href="#process">About</a>
+      <a href="#services">Services</a>
+      <a href="#blog">Blogs</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="main">
+  <!-- WELCOME SECTION -->
+  <section class="welcome-section">
+    <div class="welcome-text">
+      <h2>Embrace Clean Living with Purpose</h2>
+      <p>Pristine Pads champions sustainable, innovative, and eco-conscious living solutions. Our mission is
+        simple — build homes that care for you and the planet.</p>
+      <a href="#blog" class="know-more-btn">Know More</a>
+    </div>
+    <div class="welcome-images">
+      <img src="assets/img/about/intro1.png" alt="Sketch 1">
+      <img src="assets/img/about/intro2.png" alt="Sketch 2">
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section accent-background">
+  <!-- INFO BOXES SECTION -->
+  <section class="floating-boxes-section scroll-fade-up">
+    <div class="floating-boxes">
+      <div class="info-box">
+        <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <span>Stewardship</span>
+      </div>
+      <div class="info-box">
+        <div class="icon"><i class="fas fa-leaf"></i></div>
+        <span>Sustainability</span>
+      </div>
+      <div class="info-box">
+        <div class="icon"><i class="fas fa-recycle"></i></div>
+        <span>Eco-Friendly</span>
+      </div>
+      <div class="info-box">
+        <div class="icon"><i class="fas fa-lightbulb"></i></div>
+        <span>Innovation</span>
+      </div>
+    </div>
+  </section>
 
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-5 justify-content-between">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+  <!-- ABOUT SECTION -->
 
-            <h2><span>Welcome to </span><span class="accent">Pristine Pads & Co.</span></h2>
-            <p>Revolutionizing Sustainability, One Pad at a Time.</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Know more</a>
-              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
-                class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
-                  Video</span></a> -->
-            </div>
+<div class="process-section" id="process">
+  <h2 class="underline-heading">Our Process</h2>
+  <p class="process-tagline">Transforming Waste into Worth — The Pristine Way</p>
+  <p class="process-intro">At Pristine Pads, we believe in building a cleaner, more sustainable world—starting with menstrual waste. Here's how we turn used sanitary pads into reusable resources.</p>
+
+  <!-- Animated Timeline -->
+  <div class="process-timeline">
+    <div class="timeline-container">
+      <!-- Step circles with numbers -->
+      <div class="timeline-steps">
+        <div class="timeline-step active" onclick="showStep(1)">
+          <div class="step-icon">
+            <i class="fas fa-bullhorn"></i>
           </div>
-          <div class="col-lg-5 order-1 order-lg-2">
-            <img src="assets/img/home page img.png" class="img-fluid" alt="Pristine Pads and Co.">
+          <span class="step-label">Collection</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(2)">
+          <div class="step-icon">
+            <i class="fas fa-filter"></i>
+          </div>
+          <span class="step-label">Sorting</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(3)">
+          <div class="step-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <span class="step-label">Separation</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(4)">
+          <div class="step-icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <span class="step-label">Refining</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(5)">
+          <div class="step-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <span class="step-label">Recovery</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(6)">
+          <div class="step-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <span class="step-label">Zero-Waste</span>
+        </div>
+        <div class="timeline-step" onclick="showStep(7)">
+          <div class="step-icon">
+            <i class="fas fa-hands-helping"></i>
+          </div>
+          <span class="step-label">Impact</span>
+        </div>
+      </div>
+      <!-- Timeline bar with animated particles -->
+      <div class="timeline-bar">
+        <div class="timeline-progress"></div>
+        <div class="timeline-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step content container with animations -->
+  <div class="step-content-container">
+    <!-- Step 1 -->
+    <div class="step-content active" id="step1">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/1.png" alt="Collection & Awareness" class="animated-image">
+          <div class="image-overlay">
+            </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">01</span>Collection & Awareness</h3>
+          <p class="step-description">We collaborate with institutions, communities, and partners to collect used sanitary pads through dedicated bins and awareness drives—ensuring safe and hygienic handling from the start.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Safe collection methods</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Community engagement</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Awareness campaigns</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="icon-boxes position-relative" data-aos="fade-up" data-aos-delay="200">
-        <div class="container position-relative">
-          <div class="row gy-4 mt-5">
-
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="fa-solid fa-handshake"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Stewardship
-                  </a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="fa-solid fa-list-check"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Sustainability</a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="fa-brands fa-pagelines"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Eco - friendly
-                  </a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="bi bi-command"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Innovation</a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About Us<br></h2>
-        <p>Where Innovation and Sustainability Come Together to Shape a Better Tomorrow.</p>
-      </div><!-- End Section Title -->
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3>Pristine Pads & Co.</h3>
-            <img src="assets/img/about 1.jpg" class="img-fluid rounded-4 mb-4" alt="">           
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              <p>
-                Pristine Pads & Co. is more than a recycling company; we are a movement dedicated to reshaping the way
-                the world views
-                sanitary waste. Founded on principles of sustainability and innovation, we work tirelessly to combat the
-                environmental
-                impact of discarded sanitary pads through responsible recycling practices.
-              </p>
-              <div class="position-relative mt-4">
-                <img src="assets/img/about 2.jpg" class="img-fluid rounded-4" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About Section -->
-
-    <!-- Clients Section -->
-    <!-- <section id="clients" class="clients section">
-
-      <div class="container">
-
-        <div class="swiper init-swiper">
-          
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>/Clients Section -->
-
-    <!-- Stats Section -->
-    <!-- <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 align-items-center">
-
-          <div class="col-lg-5">
-            <img src="assets/img/stats-img.svg" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-lg-7">
-
-            <div class="row gy-4">
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-emoji-smile flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                      class="purecounter"></span>
-                    <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
-                  </div>
-                </div>
-              </div>
-              End Stats Item -->
-
-    <!-- <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-journal-richtext flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                      class="purecounter"></span>
-                    <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
-                  </div>
-                </div>
-              </div>
-              End Stats Item -->
-
-    <!-- <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-headset flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                      class="purecounter"></span>
-                    <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-                  </div>
-                </div>
-              </div>  -->
-    <!-- End Stats Item
-
-              <div class="col-lg-6">
-                <div class="stats-item d-flex">
-                  <i class="bi bi-people flex-shrink-0"></i>
-                  <div>
-                    <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                      class="purecounter"></span>
-                    <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
-                  </div>
-                </div>
-              </div><!-- End Stats Item -->
-
-    <!-- </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-    <!-- /Stats Section -->
-
-    <!-- Call To Action Section -->
-    <!-- 
-    /Call To Action Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>We specialize in collecting and processing used pads using cutting-edge technology. Our recycling process not
-          only
-          reduces landfill waste but also recovers valuable resources, turning them into reusable materials.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-leaf"></i>
-              </div>
-              <h3>Eco-Friendly Disposal</h3>
-              <p>Safe and hygienic collection of used pads.
-              </p>
-              <!-- <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-recycle"></i>
-              </div>
-              <h3>Recycling Solutions</h3>
-              <p>Advanced processes that convert waste into useful by-products.</p>
-              <!-- <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-people-arrows"></i>
-              </div>
-              <h3>Awareness Campaigns</h3>
-              <p>Educating communities about the importance of sustainable sanitary waste management.</p>
-              <!-- <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a> -->
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <h3>Asperiores Commodit</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>End Service Item -->
-
-          <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <h3>Velit Doloremque</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
-                alias eius labore.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>End Service Item -->
-
-          <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
-              <a href="service-details.html" class="readmore stretched-link">Read more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>End Service Item -->
-
-          <!-- </div>
-
-      </div>
-
-    </section> -->
-          <!-- /Services Section -->
-
-          <!-- Testimonials Section -->
-          <!-- 
-    End testimonial item -->
-
-          <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                    minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>End testimonial item -->
-
-          <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
-                    velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                    veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>End testimonial item -->
-
-          <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
-                    culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
-                    quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>End testimonial item -->
-
-          <!-- </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section>/Testimonials Section -->
-
-          <!-- Portfolio Section -->
-          <!-- <section id="portfolio" class="portfolio section"> -->
-
-          <!-- Section Title -->
-          <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>End Section Title -->
-
-          <!-- <div class="container">
-
-      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-product">Product</li>
-          <li data-filter=".filter-branding">Branding</li>
-          <li data-filter=".filter-books">Books</li> -->
-          <!-- </ul>End Portfolio Filters -->
-
-          <!-- <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Product 1</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-          <!-- 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Branding 1</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- /End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">App 2</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Product 2</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Branding 2</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Books 2</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">App 3</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Product 3</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Branding 3</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-            <div class="portfolio-content h-100">
-              <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img
-                  src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt=""></a>
-              <div class="portfolio-info">
-                <h4><a href="portfolio-details.html" title="More Details">Books 3</a></h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-              </div>
-            </div>
-          </div>End Portfolio Item -->
-
-          <!-- </div>End Portfolio Container -->
-
-          <!-- </div>
-
     </div>
 
-    </section>/Portfolio Section -->
-
-          <!-- Team Section -->
-          <!-- <section id="team" class="team section"> -->
-
-          <!-- Section Title -->
-          <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Our Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>End Section Title -->
-
-          <!-- <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <h4>Walter White</h4>
-              <span>Web Development</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
+    <!-- Step 2 -->
+    <div class="step-content" id="step2">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/2.png" alt="Initial Sorting" class="animated-image">
+          <div class="image-overlay">
             </div>
-          </div>End Team Member -->
-
-          <!-- /End Team Member -->
-
-          <!-- /End Team Member -->
-          <!-- 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter-x"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>End Team Member -->
-          <!-- 
         </div>
-
-      </div>
-
-    </section>/Team Section -->
-
-          <!-- Pricing Section -->
-          <!-- <section id="pricing" class="pricing section"> -->
-
-          <!-- Section Title -->
-          <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>End Section Title -->
-
-          <!-- <div class="container" data-aos="zoom-in" data-aos-delay="100">
-
-        <div class="row g-4">
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
-              </div>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">02</span>Initial Sorting</h3>
+          <p class="step-description">Once collected, the pads are manually pre-sorted to remove contaminants and ensure only recyclable material enters the next phase. This step ensures efficiency in the separation stage.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Contaminant removal</span>
             </div>
-          </div>End Pricing Item -->
-
-          <!-- <div class="col-lg-4">
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <div class="icon">
-                <i class="bi bi-rocket"></i>
-              </div>
-
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Quality control</span>
             </div>
-          </div>End Pricing Item -->
-
-          <!-- <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div>End Pricing Item -->
-
-          <!-- </div>
-
-      </div>
-
-    </section>/Pricing Section -->
-<!-- Blogs Section -->
-<section id="blogs" class="blogs section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Blogs</h2>
-    <p>Stay updated with our latest insights on sustainability, waste management, and eco-friendly innovations.</p>
-  </div>
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-        <div class="blog-container">
-          <div class="blog-item" data-aos="zoom-in" data-aos-delay="300">
-            <img src="/assets/img/blog/blog-1-prakalp.jpg" alt="Sustainability Award" class="blog-image">
-            <h4>Pristine Pads Makes Waves in Sustainability with Top Honors</h4>
-            <p class="author">By: Sanvi Chandiramani</p>
-            <div class="blog-content">
-              <p>In a mesmerizing achievement, Pristine Pads, an indelible initiative that reuses used pads, has taken home the FIRST PRICE at the prestigious Prakalp competition. This remarkable success is a testament to the innovative spirit and dedication of the Pristine Pads team. But that's not all - Pristine Pads also secured an impressive 2nd position at Ventura, a state-level project exhibition organized by BVIT. This dual recognition solidified Pristine Pads' position as a pioneer in sustainable solutions.</p>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Pre-processing</span>
             </div>
           </div>
-          <div class="blog-item" data-aos="zoom-in" data-aos-delay="400">
-            <img src="/assets/img/blog/blog2.jpg" alt="Menstrual Waste Management" class="blog-image">
-            <h4>Breaking the Silence on Menstrual Waste Management</h4>
-            <p class="author">By: Sanvi Chandiramani</p>
-            <div class="blog-content">
-              <p>Let's face it - Menstrual waste management has been a long-neglected issue, with millions of pads ending up in landfills and oceans each year. But we believe it's time to change that. By providing sustainable solutions, we're committed to paving the way for a more eco-friendly future. Sustainability is not a destination, it's a journey. JOIN us in our mission to create a better tomorrow. Let's come together and be the change we wish to see in the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-content" id="step3">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/3.png" alt="Rotary Separation Technology" class="animated-image">
+          <div class="image-overlay">
+            </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">03</span>Rotary Separation Technology</h3>
+          <p class="step-description">Our custom-built rotary separator plays a vital role in segregating components. Using mechanical separation, we extract wood pulp and plastic from each pad with minimal waste and no harmful chemicals.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Chemical-free process</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Component separation</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Proprietary technology</span>
             </div>
           </div>
-          <div class="blog-item" data-aos="zoom-in" data-aos-delay="500">
-            <img src="/assets/img/blog/blog3.jpg" alt="Sustainable Menstruation" class="blog-image">
-            <h4>Empowering Sustainable Menstruation: The Pristine Pads and Co. Story</h4>
-            <p class="author">By: Sanvi Chandiramani</p>
-            <div class="blog-content">
-              <p>Imagine a world where every period is a chance to make a positive impact. Welcome to Pristine Pads Co., where we're making that vision a reality.</p>
-              <p><strong>Introduction:</strong> As the world battles with the challenges of climate change, environmental degradation, and social inequality, it's magnanimous to see companies like Pristine Pads and Co. leading the charge towards a more sustainable and greener future. In this blog post, we'll delve into the inspiring story of Pristine Pads and Co. and their innovative approach to menstrual sustainability.</p>
-              <p><strong>The Problem:</strong> Menstrual waste is a significant contributor to environmental pollution, with millions of disposable pads and tampons ending up in landfills and oceans every year. It has an indelible impact on the environment, becoming an exigency. And if it continues like this, then we will end up jeopardizing the environment.</p>
-              <p><strong>The Solution:</strong> Pristine Pads and Co., a planet-centric company, is pioneering a revolutionary approach to menstrual sustainability by reusing and recycling used pads. Their innovative technology and commitment to eco-friendly practices are reducing menstrual waste, conserving natural resources, and promoting a healthier and greener environment for us and the future.</p>
-              <p><strong>Conclusion:</strong> Pristine Pads and Co. is a shining example of a company that's prioritizing sustainability and social responsibility. Their company is like a Theodore to the environment. Their innovative approach to menstrual sustainability is not only reducing environmental pollution but also promoting a healthier environment for all. As consumers, we have the power to support companies like Pristine Pads and Co. that are making a positive impact on the world. If not us, then who? After all, the environment is everyone's duty to protect. So, join us in our mission to create a better future... Let's team up and save the world.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-content" id="step4">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/4.png" alt="Pulp Refining" class="animated-image">
+          <div class="image-overlay">
+            </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">04</span>Pulp Refining</h3>
+          <p class="step-description">The extracted wood pulp undergoes further treatment to enhance its purity and texture. It is then repurposed into useful materials like paper products, compostable packaging, or insulation.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Quality enhancement</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Material transformation</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Resource optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-content" id="step5">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/5.png" alt="Plastic Recovery & Reuse" class="animated-image">
+          <div class="image-overlay">
+            </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">05</span>Plastic Recovery & Reuse</h3>
+          <p class="step-description">The separated plastic is sanitized, shredded, and processed to be reused in various industrial applications such as molded products, tiles, or even infrastructure materials.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Full sanitization</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Precision shredding</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Multiple applications</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-content" id="step6">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/6.png" alt="Zero-Waste Vision" class="animated-image">
+          <div class="image-overlay">
+        </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">06</span>Zero-Waste Vision</h3>
+          <p class="step-description">Our aim is zero waste. Residual waste, if any, is treated through eco-friendly disposal methods or explored for innovative reuse, ensuring we leave no harmful footprint behind.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Complete utilization</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Eco-friendly disposal</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Innovative solutions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step-content" id="step7">
+      <div class="step-grid">
+        <div class="step-image">
+          <img src="assets/img/about/7.png" alt="Social Impact & Scale" class="animated-image">
+          <div class="image-overlay">
+          </div>
+        </div>
+        <div class="step-details">
+          <h3 class="step-title"><span class="step-number">07</span>Social Impact & Scale</h3>
+          <p class="step-description">With every cycle, we're not just recycling—we're empowering women, creating green jobs, and building a circular economy for menstrual hygiene management.</p>
+          <div class="step-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Women empowerment</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Green job creation</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Circular economy</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Animated navigation buttons -->
+  <div class="step-navigation">
+    <button class="nav-btn prev-btn" onclick="prevStep()">
+      <i class="fas fa-arrow-left"></i> Previous
+    </button>
+    <div class="step-indicator">
+      <span id="current-step">1</span>/<span id="total-steps">7</span>
+    </div>
+    <button class="nav-btn next-btn" onclick="nextStep()">
+      Next <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+
+  <!-- Animated quote section -->
+  <div class="process-quote">
+    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+    <p class="quote-text">"What others throw away, we transform into possibility."</p>
+    <p class="quote-author">Pristine Pads Team</p>
+    <div class="pulsing-circle"></div>
+    <p class="cta-text">Join us in revolutionizing recycling, one pad at a time.</p>
+  </div>
+</div>
+
+<!--END PROCESS SECTION--> 
+
+<!-- SERVICE SECTION -->
+
+<section class="services-section scroll-fade-up" id="services">
+  <h2 class="underline-heading">Our Services</h2>
+  <p class="sub-heading">
+    We specialize in collecting and processing used pads using cutting-edge technology. Our recycling process not only
+    reduces landfill waste but also recovers valuable resources, turning them into reusable materials.
+  </p>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-recycle"></i>
+      <div class="hover-text">We ensure every pad is collected, processed, and repurposed into something valuable —
+        contributing to a cleaner world.</div>
+      <h3>Eco-Friendly Disposal</h3>
+      <p>Safe and hygienic collection of used pads.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-industry"></i>
+      <div class="hover-text">Through our innovative recycling approach, we convert waste into usable materials while
+        reducing environmental impact.</div>
+      <h3>Recycling Solutions</h3>
+      <p>Advanced processes that convert waste into useful by-products.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-bullhorn"></i>
+      <div class="hover-text">We actively educate communities and spark conversations to promote conscious sanitary
+        waste habits.</div>
+      <h3>Awareness Campaigns</h3>
+      <p>Educating communities about the importance of sustainable sanitary waste management.</p>
+    </div>
+  </div>
+
 </section>
 
-          <!-- Faq Section -->
-          <!-- <section id="faq" class="faq section">
+<!-- END SERVICE SECTION -->
 
-            <div class="container">
+  <!-- BLOG SECTION -->
+  <section class="blog-section scroll-fade-up" id="blog">
+    <h2 class="underline-heading">Blogs</h2>
+    <p class="sub-heading-services">
+      Stay updated with our latest insights on sustainability, waste management, and eco-friendly innovations.
+    </p>
 
-              <div class="row gy-4">
+    <div class="blog-container">
+      <a href="blog.html?blog=0" class="blog-box">
+        <img src="assets/img/blog/blog-1-prakalp.jpg" alt="Blog 1 Image">
+        <div class="blog-content">
+          <h3>Pristine Pads Makes Waves in Sustainability with Top Honors</h3>
+          <p>In a mesmerizing achievement, Pristine Pads, an indelible initiative that reuses used pads, has taken home
+            the FIRST PRICE at the prestigious Prakalp competition. This remarkable success is a testament to the
+            innovative spirit and dedication of the Pristine Pads team. But that's not all - Pristine Pads also secured
+            an impressive 2nd position at Ventura, a state-level project exhibition organized by BVIT. This dual
+            recognition solidified Pristine Pads' position as a pioneer in sustainable solutions.</p>
+        </div>
+        <p class="blog-author">By Sanvi Chandiramani</p>
+      </a>
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                  <div class="content px-xl-5">
-                    <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+      <a href="blog.html?blog=1" class="blog-box">
+        <img src="assets/img/blog/blog2.jpg" alt="Blog 2 Image">
+        <div class="blog-content">
+          <h3>Breaking the Silence on Menstrual Waste Management</h3>
+          <p>Let's face it - Menstrual waste management has been a long-neglected issue, with millions of pads ending up
+            in landfills and oceans each year. But we believe it's time to change that. By providing sustainable
+            solutions, we're committed to paving the way for a more eco-friendly future. Sustainability is not a
+            destination, it's a journey. JOIN us in our mission to create a better tomorrow. Let's come together and be
+            the change we wish to see in the world.</p>
+        </div>
+        <p class="blog-author">By Sanvi Chandiramani</p>
+      </a>
 
-                  </div>
-                </div>
+      <a href="blog.html?blog=2" class="blog-box">
+        <img src="assets/img/blog/blog3.jpg" alt="Blog 3 Image">
+        <div class="blog-content">
+          <h3>Empowering Sustainable Menstruation: The Pristine Pads Story</h3>
+          <p>Imagine a world where every period is a chance to make a positive impact. Welcome to Pristine Pads,
+            where we're making that vision a reality.
 
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            Introduction: As the world battles with the challenges of climate change, environmental degradation, and
+            social inequality, it's magnanimous to see companies like Pristine Pads leading the charge towards a
+            more sustainable and greener future. In this blog post, we'll delve into the inspiring story of Pristine
+            Pads and their innovative approach to menstrual sustainability.
 
-                  <div class="faq-container">
-                    <div class="faq-item faq-active">
-                      <h3><span class="num">1.</span> <span>What does Pristine Pads & Co. do?
-                        </span></h3>
-                      <div class="faq-content">
-                        <p>We recycle used sanitary pads into eco-friendly materials, reducing waste and promoting
-                          sustainability.
-                        </p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div> End Faq item-->
-                    <!-- <div class="faq-item">
-                      <h3><span class="num">2.</span> <span>How does the recycling process work?
-                        </span></h3>
-                      <div class="faq-content">
-                        <p>We use advanced technology to safely collect, process, and convert used pads into reusable
-                          by-products with minimal
-                          environmental impact.
-                        </p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div>End Faq item -->
+            The Problem: Menstrual waste is a significant contributor to environmental pollution, with millions of
+            disposable pads and tampons ending up in landfills and oceans every year. It has an indelible impact on the
+            environment, becoming an exigency. And if it continues like this, then we will end up jeopardizing the
+            environment.
 
-                    <!-- <div class="faq-item">
-                      <h3><span class="num">3.</span> <span>Why is recycling sanitary pads important?
-                        </span>
-                      </h3>
-                      <div class="faq-content">
-                        <p>Sanitary pads contribute significantly to non-biodegradable waste in landfills. Recycling
-                          them helps protect the
-                          environment and conserves resources.
-                        </p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div>End Faq item -->
+            The Solution: Pristine Pads, a planet-centric company, is pioneering a revolutionary approach to
+            menstrual sustainability by reusing and recycling used pads. Their innovative technology and commitment to
+            eco-friendly practices are reducing menstrual waste, conserving natural resources, and promoting a healthier
+            and greener environment for us and the future.
 
-                    <!-- <div class="faq-item">
-                      <h3><span class="num">4.</span> <span>How can I contribute to your initiative?
-                        </span>
-                      </h3>
-                      <div class="faq-content">
-                        <p>You can participate by properly disposing of your used pads in our collection bins or joining
-                          our community awareness
-                          programs.
-                        </p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div> -->
-                    <!-- End Faq item-->
-
-                    <!-- <div class="faq-item">
-                      <h3><span class="num">5.</span> <span>Is your recycling process hygienic and safe?
-                        </span></h3>
-                      <div class="faq-content">
-                        <p>Absolutely. Our process adheres to strict hygiene and safety standards, ensuring both
-                          environmental and public
-                          health protection.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                    </div>End Faq item 
-
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-          </section>
-          /Faq Section -->
-
-
-
-          <!-- Contact Section -->
-          <section id="contact" class="contact section">
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-              <h2>Contact</h2>
-              <p>Where Innovation and Sustainability Come Together to Shape a Better Tomorrow.</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-              <div class="row gx-lg-5 gy-4">
-                <!-- Contact Details -->
-                <div class="col-lg-4">
-                  <div class="info-container d-flex flex-column align-items-stretch">
-                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
-                      <i class="bi bi-telephone flex-shrink-0"></i>
-                      <div>
-                        <h3>Call Us</h3>
-                        <p>+91 92214 73819</p>
-                      </div>
-                    </div><!-- End Info Item -->
-
-                    <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
-                      <i class="bi bi-envelope flex-shrink-0"></i>
-                      <div>
-                        <h3>Email Us</h3>
-                        <p>pristinepads.co@gmail.com</p>
-                      </div>
-                    </div><!-- End Info Item -->
-                  </div>
-                </div><!-- End Contact Details -->
-
-                <!-- Contact Form -->
-                <div class="col-lg-8">
-                  <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade"
-                    data-aos-delay="100">
-                    <div class="row gy-4">
-                      <div class="col-md-6">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                      </div>
-
-                      <div class="col-md-6">
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                      </div>
-
-                      <div class="col-md-12">
-                        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                      </div>
-
-                      <div class="col-md-12">
-                        <textarea class="form-control" name="message" rows="8" placeholder="Message"
-                          required></textarea>
-                      </div>
-
-                      <div class="col-md-12 text-center">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                        <button type="submit">Send Message</button>
-                      </div>
-                    </div>
-                  </form>
-                </div><!-- End Contact Form -->
-              </div>
-            </div>
-          </section><!-- End Contact Section -->
-
-
-
-  </main>
-
-  <footer id="footer" class="footer accent-background">
-    <div class="container footer-top">
-      <div class="row gy-2 align-items-center">
-
-        <!-- About Section -->
-        <div class="col-lg-5 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Pristine Pads & Co.</span>
-          </a>
-          <p>
-            Join the Movement
-            Every small step leads to a big change. By choosing Pristine Pads and Co., you’re not just recycling; you’re
-            redefining
-            responsibility and sustainability. Together, we can build a future where waste is no longer wasted.
+            Conclusion: Pristine Pads is a shining example of a company that's prioritizing sustainability and
+            social responsibility. Their company is like a Theodore to the environment. Their innovative approach to
+            menstrual sustainability is not only reducing environmental pollution but also promoting a healthier
+            environment for all. As consumers, we have the power to support companies like Pristine Pads that
+            are making a positive impact on the world. If not us, then who? After all, the environment is everyone's
+            duty to protect. So, join us in our mission to create a better future... Let's team up and save the world.
           </p>
-          <div class="social-links d-none d-md-flex align-items-center">
-            <a href="https://x.com/pristinepads" class="twitter">
-              <i class="bi bi-twitter-x"></i>
-            </a>
-            <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
-            <a href="https://www.instagram.com/pristinepads.co/" class="instagram">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+        </div>
+        <p class="blog-author">By Sanvi Chandiramani</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section scroll-fade-up" id="contact">
+    <div class="contact-box">
+      <div class="contact-content">
+        <h2 class="main-heading">Get in Touch</h2>
+        <p class="sub-heading">We would love to hear from you. Let's make something great together.</p>
+
+        <div class="contact-grid">
+          <div>
+            <h3 class="section-title">Visit Us</h3>
+            <p class="location">chuaigfudckj fugv9hovn grhof</p>
+          </div>
+          <div>
+            <h3 class="section-title">Call Us</h3>
+            <p class="inner-heading">+91 92214 73819</p>
+          </div>
+          <div>
+            <h3 class="section-title">Email</h3>
+            <p class="inner-heading">pristinepads.co@gmail.com</p>
+          </div>
+          <div>
+            <h3 class="section-title">Follow Us</h3>
+            <div style="font-size: 20px;">
+              <a href="https://www.instagram.com/pristinepads.co/" style="color:white; margin-right: 10px;"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/pristine-pads/" style="color:white;"><i class="fab fa-linkedin-in"></i></a>
+              <!-- https://x.com/pristinepads -->
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Useful Links -->
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">About us</a></li>
-            <li class="list-inline-item"><a href="#">Services</a></li>
-            <li class="list-inline-item"><a href="#">FAQ</a></li>
-            <li class="list-inline-item"><a href="#">Contact us</a></li>
-          </ul>
-        </div>
+      <div class="white-inner-box">
+        <label class="form-label" for="name">Your Name</label>
+        <input type="text" id="name" name="name" />
 
-        <!-- Contact Info -->
-        <div class="col-lg-3 col-md-12 footer-contact text-lg-end">
-          <div class="d-flex flex-column align-items-lg-end">
-            <p class="mb-2"><strong>Phone:</strong> <span>+91 92214 73819</span></p>
-            <p><strong>Email:</strong> <span>pristinepads.co@gmail.com</span></p>
-          </div>
-        </div>
+        <label class="form-label" for="email">Your Email</label>
+        <input type="email" id="email" name="email" />
 
+        <label class="form-label" for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+
+        <button class="send-btn">Send Message</button>
       </div>
     </div>
+  </section>
+<!-- END CONTACT SECTION -->
 
-    <!-- Copyright Section -->
-    <div class="container copyright text-center mt-3">
-      <p>© <strong>Pristine Pads & Co.</strong> All Rights Reserved</p>
-    </div>
-  </footer>
-
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
+  <script src="assets/js/main.js"></script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
 

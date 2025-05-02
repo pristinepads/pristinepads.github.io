@@ -1,0 +1,250 @@
+* {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: #f8fdfa;
+    color: #333;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #008374;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+header h1 {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.blog-main-container {
+    display: flex;
+    max-width: 1200px;
+    height: calc(100vh - 5rem);
+    margin: 0rem auto 2rem;
+    gap: 6rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main-blog-content {
+    width: 67%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    transition: all 0.5s ease;
+    scroll-behavior: smooth;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.back-btn {
+    display: inline-block;
+    color: #008374;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    border: none;
+    padding-top: 4rem;
+    background: none;
+    cursor: pointer;
+}
+
+.blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #008374;
+    text-align: center;
+    margin: 0.5rem 0 0.3rem;
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.blog-image {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 25px;
+    background: white;
+    padding: 8px;
+    object-fit: cover;
+}
+
+.blog-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem 0;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.nav-buttons button {
+    background: none;
+    border: none;
+    color: #008374;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-buttons button:hover {
+    transform: scale(1.05);
+}
+
+section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+section h2 {
+    font-size: 1.6rem;
+    color: #008374;
+    /* Matches your theme */
+    margin-bottom: 0.5rem;
+}
+
+.sidebar {
+    width: 30%;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    scroll-behavior: smooth;
+}
+
+.sidebar h3 {
+    font-size: 1.6rem;
+    color: #008374;
+    margin-bottom: 1rem;
+}
+
+.more-card {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.more-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.more-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.more-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.more-card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: transform 0.6s ease;
+    transform: translateY(0);
+}
+
+.more-card:hover .more-card-title {
+    transform: translateY(60%);
+}
+
+.blog-main-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(67% + 1.2rem);
+    width: 1px;
+    background: #ccc;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .blog-main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .main-blog-content,
+    .sidebar {
+        width: 100%;
+        max-height: none;
+    }
+
+    .fixed-header {
+        justify-content: center;
+    }
+
+    .blog-main-container::before {
+        display: none;
+    }
+}
