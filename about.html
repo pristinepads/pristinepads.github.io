@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristine Pads - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Import the Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        body, html {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            background-image: url('/assets/bgimages/about.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.6);
+            background-blend-mode: overlay;
+        }
+
+        /* Navigation Bar Styling */
+        header {
+            position: fixed; /* Makes the header float */
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: transparent; /* Makes the navbar background transparent */
+            transition: all 0.3s ease;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+        }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            /* Added blur effect to the logo section */
+            background-color: transparent; /* Changed to transparent for "invisible" effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            border: none; /* Removed the border */
+        }
+        .logo {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: black;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+        }
+        .nav-links a {
+            font-size: 1rem;
+            color: black;
+            font-weight: normal;
+            text-decoration: none;
+            padding: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        /* Updated Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 1rem;
+            right: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            text-align: center;
+            padding: 0;
+            z-index: 11;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .mobile-menu-dropdown.active {
+            max-height: 500px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .mobile-menu-dropdown a {
+            display: block;
+            color: black;
+            padding: 0.5rem;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            flex-grow: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+
+        .about-section {
+            padding: 2rem;
+        }
+
+        .about-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p, .about-section ul {
+            font-size: 1rem;
+            color: black;
+            line-height: 1.6;
+        }
+
+        .process-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-list-container {
+            position: relative;
+            flex: 1;
+        }
+
+        .process-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .process-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .process-item .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        .process-item .icon-container .fas {
+            color: black;
+            font-size: 1.5rem;
+        }
+        .process-item .icon-container .process-line {
+            height: 2rem;
+            width: 2px;
+            border-left: 2px dashed white;
+        }
+        .process-item:last-child .icon-container .process-line {
+            display: none;
+        }
+
+        .process-text {
+            color: black;
+        }
+
+        .image-carousel {
+            flex: 1;
+            position: relative;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-image.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-image:not(.active) {
+            opacity: 0;
+        }
+
+        .carousel-placeholder-text {
+            color: black;
+            text-align: center;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.4);
+            color: black;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .carousel-button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        #prev-button {
+            left: 5px;
+        }
+
+        #next-button {
+            right: 5px;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 10;
+            color: #404e40;
+            padding: 2rem 1rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links a {
+            color: #404e40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons a {
+            color: #404e40;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 769px) {
+             .nav-links {
+                width: 50%;
+                justify-content: space-around;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-button {
+                display: block;
+            }
+            .cards-main-box {
+                grid-template-columns: 1fr;
+            }
+            .text-section.right-aligned {
+                padding-left: 0;
+            }
+            .heading-1, .heading-2 {
+                font-size: 2rem;
+            }
+            .paragraph-1, .paragraph-2 {
+                font-size: 1rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .process-section {
+                flex-direction: column;
+            }
+            .image-carousel {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav class="navbar">
+                <div class="logo-section">
+                    <img src="/assets/logo.png" alt="Pristine Pads Logo" class="logo">
+                    <a href="index.html" class="company-name">Pristine Pads</a>
+                </div>
+                <div class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="mobile-menu-button" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="mobile-menu-dropdown" id="mobile-menu">
+                <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <h1 style="color:black">About Pristine Pads</h1>
+                <p style="color:black">At Pristine Pads, we're more than just a brand; we're a movement towards a cleaner, greener future. Our journey began with a simple yet profound idea: to challenge wasteful, eco-unfriendly products that minimize environmental impact without compromising quality or convenience. Our dedicated team is at the forefront of providing accessible and effective alternatives, committed to creating conscious choices that benefit both our customers and the planet.</p>
+
+                <h2>Our Mission</h2>
+                <p style="color:black">Our mission is to revolutionize the way people think about everyday products by offering a sustainable alternative that is both effective and aesthetically pleasing. We strive to inspire a shift towards more responsible consumption, empowering individuals to make choices that align with their values and contribute to a healthier planet.</p>
+
+                <h2>Our Vision</h2>
+                <p style="color:black">We envision a world where sustainability is the norm, not the exception. Pristine Pads aims to be at the forefront of this change, leading the industry with innovative, eco-friendly solutions and setting new standards for environmental responsibility. We believe in ripple effect, influencing other businesses and consumers to embrace sustainable practices.</p>
+
+                <h2>Our Values</h2>
+                <p style="color:black">At Pristine Pads, our core values guide everything we do:</p>
+                <ul>
+                    <li style="color:black"><b>Sustainability:</b> We are deeply committed to minimizing our environmental footprint through responsible sourcing, production, and packaging.</li>
+                    <li style="color:black"><b>Quality:</b> We have a compromise on the quality of our products, ensuring they meet the highest standards of performance and durability.</li>
+                    <li style="color:black"><b>Innovation:</b> We constantly seek new and improved ways to create sustainable solutions, pushing the boundaries of what's possible.</li>
+                    <li style="color:black"><b>Community:</b> We believe in open and honest communication with our customers, sharing information about our processes and goals.</li>
+                    <li style="color:black"><b>Community:</b> We foster a sense of community among our customers, partners, and employees, working together to create a greener world.</li>
+                </ul>
+
+                <h2 style="color:black">Our Process</h2>
+                <div class="process-section">
+                    <div class="process-list-container">
+                        <ul class="process-list">
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-box text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Collection</b><br>
+                                    Used pads are collected from designated drop-off points.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-shipping-fast text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Sorting</b><br>
+                                    Pads are sorted by material type for efficient recycling.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-microscope text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Cleaning</b><br>
+                                    Pads undergo a thorough cleaning process to remove any impurities.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-vial text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Shredding</b><br>
+                                    Pads are shredded into small pieces to prepare for reprocessing.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-industry text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Reprocessing</b><br>
+                                    Shredded materials are reprocessed into new products.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-check text-black"></i>
+                                    <div class="process-line"></div>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Quality Check</b><br>
+                                    Each product undergoes a rigorous quality check.
+                                </div>
+                            </li>
+                            <li class="process-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-truck text-black"></i>
+                                </div>
+                                <div class="process-text ml-4">
+                                    <b>Distribution</b><br>
+                                    New products made from recycled materials are distributed to retailers.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="image-carousel">
+                        <button id="prev-button" class="carousel-button" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                        <img src="/assets/process/1.png" alt="Process Image" class="carousel-image active">
+                        <img src="/assets/process/2.png" alt="Process Image" class="carousel-image">
+                        <img src="/assets/process/3.png" alt="Process Image" class="carousel-image">
+                        <img src="/assets/process/4.png" alt="Process Image" class="carousel-image">
+                        <img src="/assets/process/5.png" alt="Process Image" class="carousel-image">
+                        <img src="/assets/process/6.png" alt="Process Image" class="carousel-image">
+                        <img src="/assets/process/7.png" alt="Process Image" class="carousel-image">
+                        <button id="next-button" class="carousel-button" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">CONTACT US</a>
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/pristinepads.co/#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/pristine-pads"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy;2025 PRISTINE PADS PVT. LTD. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        const images = document.querySelectorAll('.carousel-image');
+        const processItems = document.querySelectorAll('.process-item');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        let currentIndex = 0;
+        let slideInterval;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+            });
+            images[index].classList.add('active');
+
+            processItems.forEach((item, i) => {
+                if (i === index) {
+                    item.style.opacity = 1;
+                    item.style.transform = 'scale(1.05)';
+                } else {
+                    item.style.opacity = 0.6;
+                    item.style.transform = 'scale(1)';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 3000); // 3-second delay
+        }
+
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            startAutoSlide();
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+            resetAutoSlide();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+            resetAutoSlide();
+        });
+
+        // Initialize the carousel and start the auto slide
+        showImage(currentIndex);
+        startAutoSlide();
+    </script>
+</body>
+</html>

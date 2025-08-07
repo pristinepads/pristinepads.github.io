@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pristine Pads</title>
+    <title>Pristine Pads - Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Import the Poppins font */
@@ -14,21 +14,32 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #A1AB9B;
         }
 
         .main-container {
             min-height: 100vh;
-            background-image: url('/assets/bgimages/hero.jpg');
-            background-size: cover;
-            background-position: center;
             color: #fff;
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 1rem 2rem;
-            background-color: rgba(189, 189, 189, 0.2);
-            background-blend-mode: overlay;
+        }
+
+        /* Add this new CSS rule for the overlay */
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2); /* White overlay with 40% transparency */
+        }
+
+        /* Update the content to be above the overlay */
+        header, main, footer {
+            position: relative;
+            z-index: 2;
         }
 
         /* Navigation Bar Styling */
@@ -109,7 +120,7 @@
             border-radius: 1rem;
             text-align: center;
             padding: 0;
-            z-index: 11;
+            z-index: 11; /* Higher z-index to ensure it's on top */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
@@ -132,93 +143,79 @@
         main {
             position: relative;
             flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 1rem;
-            max-width: 1200px; /* Constrain main content width */
+            padding: 2rem 1rem;
+            max-width: 1200px;
             margin: 0 auto;
             padding-top: 80px;
         }
 
-        .main-text-container {
+        .services-section {
+            padding: 2rem;
+        }
+
+        .background-image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            opacity: 0.2;
+            width: 80%; /* Adjusted for responsiveness */
+            max-width: 600px; /* Max size for the image */
+            height: auto;
+        }
+
+        .background-image-container img {
             width: 100%;
-            margin-bottom: 3rem;
-            text-align: left;
+            height: auto;
         }
 
-        .heading-1 {
-            font-size: 2rem;
+        .services-section h1 {
+            font-size: 2.2rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            color: black;
+            margin-bottom: 2rem;
         }
-        .paragraph-1 {
+
+        .services-section p {
             font-size: 1rem;
-            font-weight: normal;
-            opacity: 0.9;
+            color: black;
+            line-height: 1.6;
         }
 
-        .text-section.right-aligned {
-            text-align: left;
-            padding-left: 6rem;
-        }
-
-        .heading-2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        .paragraph-2 {
-            font-size: 1rem;
-            font-weight: normal;
-            opacity: 0.9;
-            margin-bottom: 4rem;
-        }
-
-        /* Feature Cards */
-        .cards-section {
-            position: relative;
-            z-index: 10;
-            margin: 0 auto;
-            margin-top: auto;
-            max-width: 1200px;
-            padding: 0 1rem;
-        }
-        .cards-main-box {
-            background-color: transparent;
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 1.5rem;
-            padding: 2rem 2rem;
+        .services-card-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
-        .card {
-            text-align: center;
+
+        .service-card {
             background-color: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.4);
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 2rem;
         }
-        .card-icon {
-            color: black;
-            font-size: 1.5rem;
+
+        .service-card .icon {
+            font-size: 2rem;
+            color: #404e40;
             margin-bottom: 1rem;
         }
-        .card h3 {
-            font-size: 1.125rem;
+
+        .service-card h3 {
+            font-size: 1.2rem;
             font-weight: bold;
             color: black;
             margin-bottom: 0.5rem;
         }
-        .card p {
-            font-size: 0.875rem;
-            opacity: 0.8;
+
+        .service-card p {
+            font-size: 0.9rem;
             color: black;
+            opacity: 0.8;
         }
 
         /* Footer */
@@ -280,34 +277,14 @@
             .mobile-menu-button {
                 display: block;
             }
-            .cards-main-box {
+            .services-card-container {
                 grid-template-columns: 1fr;
-            }
-            .text-section.right-aligned {
-                padding-left: 0;
-            }
-            .heading-1, .heading-2 {
-                font-size: 2rem;
-            }
-            .paragraph-1, .paragraph-2 {
-                font-size: 1rem;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .process-content {
-                flex-direction: column;
-            }
-            .image-carousel {
-                height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <div class="overlay"></div>
 
         <header>
             <nav class="navbar">
@@ -334,43 +311,36 @@
         </header>
 
         <main>
-            <div class="main-text-container">
-                <div class="text-section">
-                    <h1 class="heading-1">Eco-Recycling Solutions for a Sustainable Future</h1>
-                    <p class="paragraph-1">Pristine Pads is dedicated to providing innovative and environmentally responsible recycling solutions. Our mission is to minimize waste and maximize resource recovery, contributing to a healthier planet for future generations.</p>
-                </div>
+            <div class="background-image-container">
+                <img src="/assets/bgimages/services.png" alt="Services Background Image">
             </div>
 
-            <div class="text-section right-aligned">
-                <h2 class="heading-2">Pristine Pads: Sustainable Solutions for a Cleaner Tomorrow</h2>
-                <p class="paragraph-2">Join us in our mission to create a greener future with our innovative eco-recycling solutions. Discover how we're making a difference, one pad at a time.</p>
-            </div>
+            <section class="services-section">
+                <h1 style="font-weight:bold; color:black;">Our Core Services for a Greener Future</h1>
+                <p style="color:black">Pristine Pads specialize in the safe collection, advanced recycling, and community education of sanitary products. Our innovative processes reduce landfill waste and transform used materials into valuable, reusable resources — building a cleaner, more sustainable world.</p>
+
+                <h1 style="font-weight:bold; margin-top:3rem; color:black;">Our Eco-Friendly Services</h1>
+                <p style="color:black">Pristine Pads provides a range of services designed to minimize environmental impact and promote sustainability. From responsible disposal to innovative recycling solutions, we're committed to a cleaner, greener future.</p>
+
+                <div class="services-card-container">
+                    <div class="service-card">
+                        <i class="fas fa-leaf icon"></i>
+                        <h3>Eco-Friendly Disposal</h3>
+                        <p>We ensure safe and environmentally responsible disposal of materials, minimizing harm to the planet.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-recycle icon"></i>
+                        <h3>Recycling Solutions</h3>
+                        <p>Our advanced recycling processes maximize resource recovery and reduce landfill waste.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-lightbulb icon"></i>
+                        <h3>Awareness Campaigns</h3>
+                        <p>We conduct educational campaigns to raise awareness about sustainable practices and environmental responsibility.</p>
+                    </div>
+                </div>
+            </section>
         </main>
-
-        <section class="cards-section">
-            <div class="cards-main-box">
-                <div class="card">
-                    <i class="fas fa-seedling card-icon"></i>
-                    <h3>Stewardship</h3>
-                    <p>Dedicated to preserving natural resources and promoting environmental health.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-leaf card-icon"></i>
-                    <h3>Eco-Friendly</h3>
-                    <p>Created with materials that have a minimal impact on the environment and support a circular economy.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-recycle card-icon"></i>
-                    <h3>Sustainability</h3>
-                    <p>Committed to long-term environmental balance through responsible practices.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-lightbulb card-icon"></i>
-                    <h3>Innovation</h3>
-                    <p>Pioneering new methods to enhance product efficiency and reduce waste.</p>
-                </div>
-            </div>
-        </section>
 
         <footer>
             <div class="footer-content">

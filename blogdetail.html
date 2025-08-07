@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristine Pads - Blog Detail</title>
+    <!-- Font Awesome for social media and feature icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Import the Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        body, html {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            color: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-image: url('/assets/bgimages/blogdetail.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Add this new CSS rule for the overlay */
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.4); /* White overlay with 40% transparency */
+        }
+        
+        /* Navigation Bar Styling */
+        header {
+            position: relative;
+            z-index: 10;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: black;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+        }
+        .nav-links a {
+            font-size: 1rem;
+            color: black;
+            font-weight: normal;
+            text-decoration: none;
+            padding: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-button {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: black;
+        }
+        
+        /* Updated Mobile Menu Dropdown Styles */
+        .mobile-menu-dropdown {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 1rem;
+            right: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            text-align: center;
+            padding: 0;
+            z-index: 11;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .mobile-menu-dropdown.active {
+            max-height: 500px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .mobile-menu-dropdown a {
+            display: block;
+            color: black;
+            padding: 0.5rem;
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        main {
+            position: relative;
+            flex-grow: 1;
+            padding: 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: black;
+        }
+        
+        .blog-detail-section {
+            padding: 2rem;
+        }
+        
+        .blog-header {
+            margin-bottom: 2rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-meta {
+            font-size: 0.8rem;
+            color: #000000;
+        }
+
+        .blog-content {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .blog-article {
+            flex: 2;
+            line-height: 1.8;
+        }
+
+        .blog-article h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-article p, .blog-article ul {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-article ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+        
+        /* Updated styles for blog-image-container */
+        .blog-image-container {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .blog-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 10;
+            color: #404e40;
+            padding: 2rem 1rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links a {
+            color: #404e40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .social-icons a {
+            color: #404e40;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Design */
+         @media (min-width: 769px) {
+            .nav-links {
+                width: 50%;
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
+
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+            /* Updated CSS for blog content on small screens */
+            .blog-content {
+                flex-direction: column;
+            }
+            .blog-image-container {
+                order: -1; /* This moves the image to the top */
+                width: 100%;
+                margin-bottom: 2rem; /* Add some space below the image */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+
+        <header>
+            <nav class="navbar">
+                <div class="logo-section">
+                    <img src="/assets/logo.png" alt="Pristine Pads Logo" class="logo">
+                    <a href="index.html" class="company-name">Pristine Pads</a>
+                </div>
+                <div class="nav-links">
+                    <a href="/about.html">About</a>
+                    <a href="/services.html">Services</a>
+                    <a href="/blog.html">Blog</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+                <div class="mobile-menu-button" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="mobile-menu-dropdown" id="mobile-menu">
+                <a href="/about.html">About</a>
+                    <a href="/services.html">Services</a>
+                    <a href="/blog.html">Blog</a>
+                    <a href="/contact.html">Contact</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="blog-detail-section">
+                <div class="blog-header">
+                    <!-- Link to go back to the main blog page -->
+                    <div style="color: black; margin-bottom: 0.5rem;"><a href="/blog.html" style="color: black;">Blog</a> / <span id="blog-category"></span></div>
+                    <!-- Heading will be updated by JS -->
+                    <h1 id="blog-title"></h1>
+                    <div class="blog-meta">By <span id="blog-author"></span> | Published on <span id="blog-date"></span></div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-article">
+                        <!-- Content will be updated by JS -->
+                        <div id="blog-content"></div>
+                    </div>
+                    <div class="blog-image-container">
+                        <!-- Image will be updated by JS -->
+                        <img id="blog-image" src="" alt="Blog Post Image" style="width:100%;height:auto;"/>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">CONTACT US</a>
+                    <a href="#">PRIVACY POLICY</a>
+                    <a href="#">TERMS OF SERVICE</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/pristinepads.co/#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/pristine-pads"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy;2025 PRISTINE PADS. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+
+        // --- Start of Dynamic Content Script ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the blog ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const blogId = urlParams.get('id');
+
+            // Define the content for each blog post
+            const blogPosts = {
+                '1': {
+                    category: 'Company News',
+                    title: 'Pristine Pads Makes Waves in Sustainability with Top Honors',
+                    author: 'Sanvi Chandiramani',
+                    date: 'April 1, 2025',
+                    content: `
+                        <p>In a mesmerizing achievement, Pristine Pads, an indelible initiative that reuses used pads, has taken home the FIRST PRICE at the prestigious Prakalp competition. This remarkable success is a testament to the innovative spirit and dedication of the Pristine Pads team. But that's not all - Pristine Pads also secured an impressive 2nd position at Ventura, a state-level project exhibition organized by BVIT. This dual recognition solidified Pristine Pads' position as a pioneer in sustainable solutions</p>
+                    `,
+                    image: '/assets/blog/blog1.jpg'
+                },
+                '2': {
+                    category: 'Community Voices',
+                    title: 'Breaking the Silence on Menstrual Waste Management',
+                    author: 'Sanvi Chandiramani',
+                    date: 'April 5, 2025',
+                    content: `
+                        <p>Let's face it - Menstrual waste management has been a long-neglected issue, with millions of pads ending up in landfills and oceans each year. But we believe it's time to change that. By providing sustainable solutions, we're committed to paving the way for a more eco-friendly future. Sustainability is not a destination, it's a journey. JOIN us in our mission to create a better tomorrow. Let's come together and be the change we wish to see in the world.</p>
+                    `,
+                    image: '/assets/blog/blog2.jpg'
+                },
+                '3': {
+                    category: 'Sustainability Journey',
+                    title: 'Empowering Sustainable Menstruation: The Pristine Pads Story',
+                    author: 'Sanvi Chandiramani',
+                    date: 'April 13, 2025',
+                    content: `
+                        <h2>Intro</h2>
+                        <p>Imagine a world where every period is a chance to make a positive impact. Welcome to Pristine Pads, where we're making that vision a reality.</p>
+                        <h2>Background</h2>
+                        <p>As the world battles with the challenges of climate change, environmental degradation, and social inequality, it's magnanimous to see companies like Pristine Pads leading the charge towards a more sustainable and greener future.</p>
+                        <h2>Problem</h2>
+                        <p>Menstrual waste is a significant contributor to environmental pollution, with millions of disposable pads and tampons ending up in landfills and oceans every year. It has an indelible impact on the environment, becoming an exigency.</p>
+                        <h2>Solution</h2>
+                        <p>Pristine Pads, a planet-centric company, is pioneering a revolutionary approach to menstrual sustainability by reusing and recycling used pads. Their innovative technology and commitment to eco-friendly practices are reducing menstrual waste, conserving natural resources, and promoting a healthier and greener environment.</p>
+                        <h2>Conclusion</h2>
+                        <p>Pristine Pads is a shining example of a company that's prioritizing sustainability and social responsibility. As consumers, we have the power to support companies like Pristine Pads and that are making a positive impact on the world. Let's team up and save the planet!</p>
+                    `,
+                    image: '/assets/blog/blog3.jpg'
+                }
+            };
+
+            const blog = blogPosts[blogId];
+
+            if (blog) {
+                // Update the elements with the blog post content
+                document.getElementById('blog-category').textContent = blog.category;
+                document.getElementById('blog-title').textContent = blog.title;
+                document.getElementById('blog-author').textContent = blog.author;
+                document.getElementById('blog-date').textContent = blog.date;
+                document.getElementById('blog-content').innerHTML = blog.content;
+                document.getElementById('blog-image').src = blog.image;
+            } else {
+                // Handle case where blog ID is not found, e.g., display a "Not Found" message
+                document.getElementById('blog-title').textContent = 'Blog Post Not Found';
+                document.getElementById('blog-content').innerHTML = '<p>The blog post you are looking for does not exist.</p>';
+            }
+        });
+        // --- End of Dynamic Content Script ---
+    </script>
+</body>
+</html>
