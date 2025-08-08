@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PristinePads - Blog Detail</title>
-    <!-- Font Awesome for social media and feature icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Import the Poppins font */
@@ -42,20 +41,30 @@
 
         /* Navigation Bar Styling */
         header {
-            position: relative;
-            z-index: 10;
+            position: fixed; /* Makes the header float */
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: transparent; /* Makes the navbar background transparent */
+            transition: all 0.3s ease;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
+            padding: 0.5rem 2rem;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            border: none;
         }
 
         .logo {
@@ -137,6 +146,7 @@
             max-width: 1200px;
             margin: 0 auto;
             color: black;
+            padding-top: 80px;
         }
 
         .blog-detail-section {
@@ -239,7 +249,7 @@
         }
 
         /* Responsive Design */
-         @media (min-width: 769px) {
+        @media (min-width: 769px) {
             .nav-links {
                 width: 50%;
                 justify-content: space-around;
@@ -250,18 +260,23 @@
             .main-container {
                 padding: 1rem;
             }
-
             .navbar {
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: flex-start;
+                padding: 0.5rem 1rem;
+                position: relative;
             }
-
+            .logo-section {
+                padding: 0.5rem 1rem;
+            }
             .nav-links {
                 display: none;
             }
-
             .mobile-menu-button {
                 display: block;
+                position: absolute;
+                right: 1rem;
+                padding: 0.5rem;
             }
             /* Updated CSS for blog content on small screens */
             .blog-content {
@@ -297,29 +312,25 @@
             </nav>
             <div class="mobile-menu-dropdown" id="mobile-menu">
                 <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </div>
         </header>
 
         <main>
             <section class="blog-detail-section">
                 <div class="blog-header">
-                    <!-- Link to go back to the main blog page -->
                     <div style="color: black; margin-bottom: 0.5rem;"><a href="blog.html" style="color: black;">Blog</a> / <span id="blog-category"></span></div>
-                    <!-- Heading will be updated by JS -->
                     <h1 id="blog-title"></h1>
                     <div class="blog-meta">By <span id="blog-author"></span> | Published on <span id="blog-date"></span></div>
                 </div>
                 <div class="blog-content">
                     <div class="blog-article">
-                        <!-- Content will be updated by JS -->
                         <div id="blog-content"></div>
                     </div>
                     <div class="blog-image-container">
-                        <!-- Image will be updated by JS -->
                         <img id="blog-image" src="" alt="Blog Post Image" style="width:100%;height:auto;"/>
                     </div>
                 </div>

@@ -258,7 +258,7 @@
 
         /* Responsive Design */
         @media (min-width: 769px) {
-             .nav-links {
+            .nav-links {
                 width: 50%;
                 justify-content: space-around;
             }
@@ -269,13 +269,21 @@
             }
             .navbar {
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: flex-start;
+                padding: 0.5rem 1rem;
+                position: relative;
+            }
+            .logo-section {
+                padding: 0.5rem 1rem;
             }
             .nav-links {
                 display: none;
             }
             .mobile-menu-button {
                 display: block;
+                position: absolute;
+                right: 1rem;
+                padding: 0.5rem;
             }
             .services-card-container {
                 grid-template-columns: 1fr;
@@ -305,10 +313,10 @@
             </nav>
             <div class="mobile-menu-dropdown" id="mobile-menu">
                 <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </div>
         </header>
 
