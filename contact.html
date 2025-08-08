@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
         body, html {
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
@@ -28,7 +28,6 @@
             background-attachment: fixed;
         }
 
-        /* Add this new CSS rule for the overlay */
         .main-container::before {
             content: '';
             position: absolute;
@@ -36,18 +35,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.7); /* White overlay with 40% transparency */
+            background-color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Navigation Bar Styling */
         header {
-            position: fixed; /* Makes the header float */
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            background-color: transparent; /* Makes the navbar background transparent */
+            background-color: transparent;
             transition: all 0.3s ease;
         }
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -55,27 +54,30 @@
             padding: 0.5rem 2rem;
             z-index: 10;
         }
+
         .logo-section {
             display: flex;
             align-items: center;
-            /* Added blur effect to the logo section */
-            background-color: transparent; /* Changed to transparent for "invisible" effect */
+            background-color: transparent;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: 1rem 2rem;
             border-radius: 9999px;
-            border: none; /* Removed the border */
+            border: none;
         }
+
         .logo {
             height: 40px;
             margin-right: 0.5rem;
         }
+
         .company-name {
             font-size: 1.5rem;
             font-weight: normal;
             color: black;
             text-decoration: none;
         }
+
         .nav-links {
             display: flex;
             background-color: rgba(255, 255, 255, 0.2);
@@ -85,6 +87,7 @@
             border-radius: 9999px;
             padding: 1rem 2rem;
         }
+
         .nav-links a {
             font-size: 1rem;
             color: black;
@@ -93,11 +96,11 @@
             padding: 0 1rem;
             transition: color 0.3s ease;
         }
+
         .nav-links a:hover {
             color: #fff;
         }
 
-        /* Mobile Menu */
         .mobile-menu-button {
             display: none;
             cursor: pointer;
@@ -105,7 +108,6 @@
             color: black;
         }
 
-        /* Updated Mobile Menu Dropdown Styles */
         .mobile-menu-dropdown {
             display: block;
             position: absolute;
@@ -118,17 +120,16 @@
             border-radius: 1rem;
             text-align: center;
             padding: 0;
-            z-index: 11; /* Increased z-index to be above the main content */
-            max-height: 0; /* Initially hidden */
+            z-index: 11;
+            max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out;
-            /* Removed border from here */
         }
 
         .mobile-menu-dropdown.active {
-            max-height: 500px; /* Expands to show content */
+            max-height: 500px;
             padding: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.4); /* Border is now only active when menu is open */
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .mobile-menu-dropdown a {
@@ -138,7 +139,6 @@
             text-decoration: none;
         }
 
-        /* Main Content */
         main {
             position: relative;
             flex-grow: 1;
@@ -153,50 +153,75 @@
             padding: 2rem;
         }
 
-        .contact-content {
+        .contact-wrapper {
             display: flex;
-            gap: 6rem; /* Increased gap */
-            align-items: flex-start;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            overflow: hidden;
         }
 
-        .contact-form-container {
-            flex: 2; /* Increased flex to make the form wider */
+        .form-column, .info-column {
+            flex: 1;
+            padding: 3rem;
         }
 
-        .contact-form-container h1 {
-            font-size: 2.5rem;
+        .form-column {
+            background-color: transparent;
+        }
+
+        .info-column {
+            background-color: rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-column h1 {
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form-container p {
-            font-size: 0.9rem;
-            color: #666;
+            text-transform: uppercase;
             margin-bottom: 2rem;
+            text-align: center;
+            color: black;
         }
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+        .form-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .contact-form input, .contact-form textarea {
+        .form-fields.full-width {
+            grid-template-columns: 1fr;
+        }
+
+        .form-fields input, .form-fields textarea {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ccc;
             border-radius: 0.5rem;
-            margin-bottom: 1rem;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .contact-form textarea {
+        .form-fields input:focus, .form-fields textarea:focus {
+            outline: none;
+            border-color: #5a7c5a;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .form-fields textarea {
             min-height: 150px;
             resize: vertical;
         }
 
-        .contact-form button {
+        .submit-button {
             background-color: #2C7151;
             color: white;
             padding: 1rem 2rem;
@@ -204,36 +229,132 @@
             border-radius: 2rem;
             cursor: pointer;
             font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
             transition: background-color 0.3s ease;
         }
 
-        .contact-form button:hover {
-            background-color: #45a049;
+        .submit-button:hover {
+            background-color: #c9302c;
         }
 
-        .contact-info-container {
-            margin-top: 3rem;
+        .submit-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
 
-        .contact-info-container h2 {
-            font-size: 1.5rem;
+        .info-column h2 {
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: black;
         }
 
-        .contact-info-container p {
+        .info-column .info-text {
             font-size: 1rem;
-            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: black;
         }
 
-        .contact-image-container {
-            flex: 2; /* Increased flex to make the image the same size as the form */
+        .info-column .contact-info-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .contact-image-container img {
+        .info-column .contact-info-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+
+        .info-column .contact-info-list i {
+            margin-right: 1rem;
+            color: #404e40;
+            font-size: 1.2rem;
+        }
+
+        /* Image Container - THIS WAS MISSING! */
+        .image-container {
+            height: 250px;
             width: 100%;
-            height: auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 1rem;
+        }
+
+        .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .image-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .image-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .image-placeholder p {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Alert Messages */
+        .alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
             border-radius: 0.5rem;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
         }
 
         /* Footer */
@@ -245,31 +366,37 @@
             margin-top: 5rem;
             text-align: center;
         }
+
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 2.5rem;
             margin-bottom: 1.5rem;
         }
+
         .footer-links a {
             color: #404e40;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .footer-links a:hover {
             color: #fff;
         }
+
         .social-icons {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
+
         .social-icons a {
             color: #404e40;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
+
         .social-icons a:hover {
             color: #fff;
         }
@@ -296,25 +423,24 @@
             .mobile-menu-button {
                 display: block;
             }
-
-            .contact-content {
+            .contact-wrapper {
                 flex-direction: column;
-                gap: 2rem;
             }
-
-            .contact-form-container {
-                flex: 1;
+            .form-column, .info-column {
+                padding: 2rem;
             }
-
-            .contact-image-container {
-                display: none;
+            .info-column {
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.4);
+            }
+            .form-fields {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-
         <header>
             <nav class="navbar">
                 <div class="logo-section">
@@ -334,39 +460,49 @@
             </nav>
             <div class="mobile-menu-dropdown" id="mobile-menu">
                 <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
             </div>
         </header>
 
         <main>
             <section class="contact-section">
-                <div class="contact-content">
-                    <div class="contact-form-container">
+                <div class="contact-wrapper">
+                    <div class="form-column">
                         <h1>Contact Us</h1>
-                        <p>We're here to help! Reach out to us with any questions or feedback.</p>
-                        <form class="contact-form">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Name">
-
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Email">
-
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Message"></textarea>
-
-                            <button type="submit">Submit</button>
+                        <div id="alert-container"></div>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-fields">
+                                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-fields full-width">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-fields full-width">
+                                <textarea id="message" name="message" placeholder="Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button" id="submitBtn">Submit</button>
                         </form>
-
-                        <div class="contact-info-container">
-                            <h2>Contact Information</h2>
-                            <p>Email: pristinepads.co@gmail.com</p>
-                        </div>
                     </div>
-                    <div class="contact-image-container">
-                        <img src="assets/bgimages/phone.jpeg" alt="Person holding a phone" />
+
+                    <div class="info-column">
+                        <h2>Find Us</h2>
+                        <p class="info-text">
+                            We're here to help! Reach out to us with any questions or feedback. Experience our professional cleaning services.
+                        </p>
+
+                        <ul class="contact-info-list">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>contact@pristinepads.co</span>
+                            </li>
+                        </ul>
+                        <div class="image-container">
+                            <img src="assets/contact/contact.png" alt="Contact Us image for Pristine Pads" class="contact-image">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -375,17 +511,16 @@
         <footer>
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="#">CONTACT US</a>
-                    <a href="#">PRIVACY POLICY</a>
-                    <a href="#">TERMS OF SERVICE</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/pristinepads.co/#"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/company/pristine-pads"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="copyright">
-                    <p>&copy;2025 PRISTINE PADS PVT. LTD. ALL RIGHTS RESERVED.</p>
+                    <p>&copy; 2025 PristinePads Pvt. Ltd. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
@@ -396,6 +531,89 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('active');
         }
+
+        function showAlert(message, type = 'info') {
+            const alertContainer = document.getElementById('alert-container');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.innerHTML = message;
+
+            alertContainer.innerHTML = '';
+            alertContainer.appendChild(alert);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.parentNode.removeChild(alert);
+                }
+            }, 5000);
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const formData = new FormData(this);
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Send form data to contact.php
+            fetch('contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes('OK')) {
+                    showAlert('Your message has been sent successfully! We\'ll get back to you soon.', 'success');
+                    this.reset(); // Clear the form
+                } else {
+                    showAlert('There was an error sending your message. Please try again later.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('There was an error sending your message. Please try again later.', 'error');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+            });
+        });
+
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input[required], textarea[required]');
+
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.style.borderColor = '#d9534f';
+                    } else {
+                        this.style.borderColor = '#ccc';
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        this.style.borderColor = '#5a7c5a';
+                    }
+                });
+            });
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            emailInput.addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    this.style.borderColor = '#d9534f';
+                    showAlert('Please enter a valid email address.', 'error');
+                }
+            });
+        });
     </script>
 </body>
 </html>
