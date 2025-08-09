@@ -3,8 +3,11 @@
 .company-name {
     font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
+  font-weight: bold;
+  color: #244530;
 }
 
 .company-name-footer {
     font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: bold;
 }
